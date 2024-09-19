@@ -1,4 +1,6 @@
 Attribute VB_Name = "sqlModule"
+'@Lang VBA
+
 Public Function sqlSELECT(accessFile, colArray, dbTable, whereArray, compareArray, oppArray) As Variant
 
 Dim result() As Variant
