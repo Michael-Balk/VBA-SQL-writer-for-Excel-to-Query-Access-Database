@@ -42,24 +42,24 @@ If whereLen > 0 Or whereArray(0) <> "" Then
                 Sql = Sql & " AND "
             End If
     Next i
-    
-  
+     
 End If
-''MsgBox sql
 
 Set rs = sqlRun(accessFile, Sql)
 
 Do Until rs.EOF
- 
     setNum = setNum + 1
     rs.MoveNext
 Loop
+
 If setNum > 0 Then
-rs.MoveFirst
+    rs.MoveFirst
 End If
+
 itemNum = setNum * (colLen + 1)
 j = 0
 ReDim result(itemNum)
+
 Do Until rs.EOF
     For i = 0 To colLen
         result(j) = rs.Fields(colArray(i))
@@ -153,7 +153,6 @@ If whereLen > 0 Or whereArray(0) <> "" Then
 End If
 
 result = sqlExecute(accessFile, dbTable, Sql)
-
 
 sqlUpdate = result
 
